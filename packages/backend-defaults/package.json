@@ -45,9 +45,6 @@
       "discovery": [
         "src/entrypoints/discovery/index.ts"
       ],
-      "rootHealth": [
-        "src/entrypoints/rootHealth/index.ts"
-      ],
       "lifecycle": [
         "src/entrypoints/lifecycle/index.ts"
       ],
@@ -56,6 +53,9 @@
       ],
       "rootConfig": [
         "src/entrypoints/rootConfig/index.ts"
+      ],
+      "rootHealth": [
+        "src/entrypoints/rootHealth/index.ts"
       ],
       "rootLifecycle": [
         "src/entrypoints/rootLifecycle/index.ts"

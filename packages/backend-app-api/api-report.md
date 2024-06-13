@@ -17,7 +17,6 @@ import { ErrorRequestHandler } from 'express';
 import { Express as Express_2 } from 'express';
 import { Format } from 'logform';
 import { Handler } from 'express';
-import { HealthService } from '@backstage/backend-plugin-api';
 import { HelmetOptions } from 'helmet';
 import * as http from 'http';
 import { HttpAuthService } from '@backstage/backend-plugin-api';
@@ -293,7 +292,7 @@ export interface RootHttpRouterConfigureContext {
   // (undocumented)
   config: RootConfigService;
   // (undocumented)
-  health: HealthService;
+  healthRouter: RequestHandler;
   // (undocumented)
   lifecycle: LifecycleService;
   // (undocumented)

@@ -188,7 +188,7 @@ export namespace coreServices {
   const rootConfig: ServiceRef<RootConfigService, 'root'>;
   const database: ServiceRef<DatabaseService, 'plugin'>;
   const discovery: ServiceRef<DiscoveryService, 'plugin'>;
-  const health: ServiceRef<HealthService, 'root'>;
+  const health: ServiceRef<RootHealthService, 'root'>;
   const httpAuth: ServiceRef<HttpAuthService, 'plugin'>;
   const httpRouter: ServiceRef<HttpRouterService, 'plugin'>;
   const lifecycle: ServiceRef<LifecycleService, 'plugin'>;
@@ -327,20 +327,6 @@ export type ExtensionPoint<T> = {
 
 // @public @deprecated (undocumented)
 export type ExtensionPointConfig = CreateExtensionPointOptions;
-
-// @public (undocumented)
-export interface HealthService {
-  // (undocumented)
-  getLiveness(): Promise<{
-    status: number;
-    payload?: any;
-  }>;
-  // (undocumented)
-  getReadiness(): Promise<{
-    status: number;
-    payload?: any;
-  }>;
-}
 
 // @public
 export interface HttpAuthService {
@@ -538,6 +524,18 @@ export function resolveSafeChildPath(base: string, path: string): string;
 
 // @public
 export interface RootConfigService extends Config {}
+
+// @public (undocumented)
+export interface RootHealthService {
+  getLiveness(): Promise<{
+    status: number;
+    payload?: any;
+  }>;
+  getReadiness(): Promise<{
+    status: number;
+    payload?: any;
+  }>;
+}
 
 // @public
 export interface RootHttpRouterService {
